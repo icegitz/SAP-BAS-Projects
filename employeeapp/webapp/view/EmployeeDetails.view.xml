@@ -1,0 +1,156 @@
+<mvc:View controllerName="sapips.training.employeeapp.controller.EmployeeDetails"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title3}" showHeader="true" showFooter="true">
+		<content>
+			<ObjectHeader id="oh1" responsive="true" fullScreenOptimized="true" 
+				 intro="" title="{FirstName} {LastName}" titleActive="false"
+				 number="{i18n>CareerLevel}" numberUnit="{EmployeeModel>CareerLevel}" numberState="None"
+				 condensed="false">
+				<headerContainer>
+					<IconTabBar id="itb1" selectedKey="key3" upperCase="false" class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter key="info" text="{i18n>tabInfo}">
+								<content>
+									<form:Form width="100%" editable="true" visible="true">
+										<form:title>
+											<core:Title text="Employee Info" level="Auto"/>
+										</form:title>
+										<form:formContainers>
+											<form:FormContainer visible="true">
+												<form:formElements>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>EID}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{EmployeeID}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>FirstName}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{FirstName}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>LastName}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{LastName}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>Age}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{Age}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>DateHire}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{DateHire}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>CareerLevel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{CareerLevel}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="{i18n>CurrentProject}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="{CurrentProject}" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+												</form:formElements>
+												<form:title/>
+											</form:FormContainer>
+										</form:formContainers>
+										<form:layout>
+											<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+										</form:layout>
+									</form:Form>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter key="skills" text="{i18n>tabSkills}">
+								<Text text="Skills Information" />
+								<content>
+									<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{path:'/Skill', templateShareable:true}">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<Title text="Skills (1)" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+													<ToolbarSpacer width=""/>
+													<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+													<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+													<OverflowToolbarButton text="Group" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+													<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Skill" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Proficiency" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active">
+												<cells>
+													<ObjectIdentifier title="{ID}" text="{SkillID}" titleActive="false" visible="true"/>
+													<Text text="{Proficiency}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</cells>
+											</ColumnListItem>
+					
+										</items>
+									</Table>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</headerContainer>
+			</ObjectHeader>
+		</content>
+        <footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer/>
+                <Button id="btnEdit" text="Edit" press="onEdit">
+                    <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+                </Button>
+                <Button id="btnCancel" text="Cancel" press="onCancel" >
+                    <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+                </Button>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

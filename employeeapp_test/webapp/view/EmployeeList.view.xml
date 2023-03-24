@@ -1,0 +1,59 @@
+<mvc:View controllerName="sapips.training.employeeapp.controller.EmployeeList"
+    xmlns:mvc="sap.ui.core.mvc"  displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="Emplist" width="auto" noDataText="No data" mode="MultiSelect"
+            showSeparators="All" growing="true" growingThreshold="20" 
+            growingScrollToLoad="true" class="sapUiResponsiveMargin">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Employees" level="H2"/>
+                    <ToolbarSpacer/>
+                    <SearchField id="searchField" width="auto" search=".onFilterPosts" />
+                    <Button text="Add" press="onOpenPressed" type="Accept"/>
+                    <Button text="Delete" press="onOpenPressed" type="Reject"/>
+                </OverflowToolbar>
+            </headerToolbar>
+                <columns>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Employee ID" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="First Name" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Last Name" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Age" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Date of Hire" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Career Level" />
+                    </Column>
+                    <Column
+                     minScreenwidth="Medium"
+                     hAlign="Left">
+                     <Text text="Current Project" />
+                    </Column>
+                </columns>
+
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
